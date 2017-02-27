@@ -44,12 +44,12 @@ GPIO_ROOT = '/sys/class/gpio'
 
 class GPIO:
     def __init__(self, pin, dir):
-        f = open(GPIO_ROOT+'/unexport', 'w')
         try:
+            f = open(GPIO_ROOT+'/unexport', 'w')
             f.write(str(pin))
+            f.close()    # try close opened GPIO
         except:
             pass
-        f.close()    # try close opened GPIO
 
         f = open(GPIO_ROOT+'/export', 'w')
         try:

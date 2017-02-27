@@ -16,8 +16,8 @@ pinfunc = (-1, -1, -1, -1, -1, -1, -1, -1, -1, 81,
            -1, 80, 78, 79, 76, 77, 74, 75, 72, 73, 70, 71)
 
 
-for i in range(70, 82):
-    gpio.GPIO(i, 'high')
+#for i in range(70, 82):
+#    gpio.GPIO(i, 'high')
 
 
 def toggleLED(i):
