@@ -45,6 +45,12 @@ int init_module(void)
 
     port[OE] = 0x00000000;  /* set gpio2 as output */
 
+    ctrl[0x820/4] = 0x34;   /* set erhpwm2A/B */
+    ctrl[0x824/4] = 0x34;
+
+    ctrl[0x8c8/4] = 0x32;   /* set erhpwm1A/B */
+    ctrl[0x8cc/4] = 0x32;
+
     printk("GPIO function initialised, set as OUTPUT\n");
     iounmap(ctrl);
     iounmap(port);
